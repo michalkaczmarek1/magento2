@@ -9,15 +9,22 @@ use Magento\Framework\Controller\ResultFactory;
 class Index extends \Magento\Backend\App\Action
 {
 
-    /**
-     * @inheritDoc
-     */
+    protected $resultPageFactory = false;
+
+    public function __construct(
+        \Magento\Backend\App\Action\Context $context,
+        \Magento\Framework\View\Result\PageFactory $resultPageFactory
+    )
+    {
+        parent::__construct($context);
+        $this->resultPageFactory = $resultPageFactory;
+    }
+
     public function execute()
     {
-        /**
-         * @var \Magento\Framework\Controller\Result\Raw $result
-         */
+        $resultPage = $this->resultPageFactory->create();
+        $resultPage->getConfig()->getTitle()->prepend((__('Items')));
 
-        return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+        return $resultPage;
     }
 }

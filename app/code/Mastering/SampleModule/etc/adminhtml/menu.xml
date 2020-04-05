@@ -7,6 +7,7 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Mastering_SampleModule::mastering" title="Mastering" module="Mastering_SampleModule" resource="Mastering_SampleModule::mastering" translate="title" sortOrder="900" action="mastering"/>
+        <add id="Mastering_SampleModule::mastering" title="Mastering" module="Mastering_SampleModule" resource="Mastering_SampleModule::mastering" translate="title" sortOrder="900" action="mastering/index/"/>
+<!--        <add id="Mastering_SampleModule::items" title="Manage Items" module="Mastering_SampleModule" sortOrder="10" action="mastering/index/index" resource="Mastering_SampleModule::mastering" parent="Mastering_SampleModule::mastering"/>-->
     </menu>
 </config>
